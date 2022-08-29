@@ -62,7 +62,8 @@ async function runBenchmarks(): Promise<void> {
                     console.log(String(event.target))
                 })
                 .run({ async: false })
-        } catch (e) {
+        } catch (e_) {
+            const e = e_ as Error;
             console.log('Error: ' + e.message)
             console.log('Stack: ' + e.stack)
         }
